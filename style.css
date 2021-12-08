@@ -1,5 +1,5 @@
 html * {
-    box-sizing: border-box;
+    box-sizing: content-box;
     font-family: Helvetica, sans-serif;
 }
 body {
@@ -13,17 +13,23 @@ body {
 .calculator {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 600px;
 }
 
 .display {
-
-    height: 100px;
     color: white;
-    font-size: 72px;
     text-align: right;
     align-content: center;
-    padding: 8px 24px;
+    padding: 0px 24px;
+}
+
+.main {
+    font-size: 72px;
+}
+
+.secondary {
+    height: 30px;
+    font-size: 24px;
 }
 
 .button-row {
@@ -35,10 +41,14 @@ body {
     flex: 1;
     font-size: 32pt;
     border-radius: 50px;
+    border-color: white;
     border-width: 0px;
+    border-style: solid;
     margin: 8px;
     color: white;
     padding: 0px;
+    transition: all .15s ease;
+    opacity: 1.0;
 }
 
 .button.utility {
@@ -51,7 +61,8 @@ body {
     background-color: rgb(58, 58, 58);
 }
 
-.button.operator {
+.button.operator, 
+.equals {
     background-color: rgb(255, 187, 0);
     font-size: 36pt;
     padding-bottom: 6px;
@@ -59,4 +70,12 @@ body {
 
 .button.wide {
     flex: 2 0 auto;
+}
+
+.button.active {
+    background-color: rgb(255, 215, 104);
+}
+
+.button.pressed {
+    opacity: 0.5;
 }
