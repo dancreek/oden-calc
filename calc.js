@@ -191,7 +191,8 @@ function operate(operation, left, right) {
             result = "Error"  //Catch any thing else
             break;
     }
-    return roundToTen(result); //limit the length of the result and clean up floating point math issues
+
+    return (isNaN(result)) ? result : roundToTen(result); //if error just return it, else limit the length of the result and clean up floating point math issues
 }
 
 //Math functions
